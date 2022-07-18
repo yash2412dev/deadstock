@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Inventory{% endblock %}
+
+{% block content %}
+  <h1>Inventory</h1>
+  {% for x in inventory %}
+ 
+    <h2>
+        {{x.Sr_no }} |  <a href="{{ x.get_absolute_url }}">
+          {{ x.name }}
+        </a> |rv_no -{{x.rv_no}}
+      </a>
+    </h2>
+    <p > 
+      location: {{ x.current_locaton }}
+    </p>
+    {{ x.location|truncatewords:30|linebreaks }}
+  {% endfor %}
+  {% include "pagination.html" with page=page_obj %}
+{% endblock %}

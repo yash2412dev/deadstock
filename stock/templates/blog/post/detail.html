@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ invo.name }}{% endblock %}
+
+{% block content %}
+<h1>{{post.name}}</h1>
+<p>
+   rv_no {{post.rv_no}}
+   Voucher_no{{post.Voucher_no}}
+</p>
+{% endblock %}
